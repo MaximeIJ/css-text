@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css-text demo</title>
+    <style>
+      html {
+        color-scheme: dark light;
+        font-size: 20px;
+        --hue: 89deg;
+        color: hsl(var(--hue), 15%, 95%);
+        background: hsl(var(--hue), 5%, 5%);
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+      }
+      @property --transition-duration {
+        syntax: '<time>';
+        inherits: true;
+        initial-value: 0.25s;
+      }
+      @property --full-transition {
+        syntax: '<time>';
+        inherits: true;
+        initial-value: calc(var(--transition-duration) * 3) ease-out;
+      }
+      @property --fast-transition {
+        syntax: '<time>';
+        inherits: true;
+        initial-value: var(--transition-duration);
+      }
+      @property --delayed-transition {
+        syntax: '<time>';
+        inherits: true;
+        initial-value: 0.2s linear 0.1s;
+      }
+      @property --line-color {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: white;
+      }
+      main {
+        height: 100vh;
+        padding: 0 1vh;
+        display: grid;
+        place-content: center;
+        gap: 2vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 0.9fr auto;
+
+        @media screen and (max-width: 600px) {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto 1fr;
+        }
+
+        & > h1,
+        & > footer {
+          grid-column: 1 / -1;
+          text-align: center;
+        }
+
+        & > textarea {
+          padding: 1rem;
+          font-size: 1rem;
+          line-height: 200%;
+          background: hsl(var(--hue), 5%, 15%);
+          border: none;
+          border-radius: 0.5rem;
+          resize: none;
+          overflow: auto;
+          transition: background 0.2s;
+          &:focus {
+            background: hsl(var(--hue), 5%, 25%);
+          }
+        }
+
+        & > css-text#preview {
+          font-size: 2rem;
+          --transition-duration: 0.25s;
+          --full-transition: calc(var(--transition-duration) * 3) ease-out;
+          --fast-transition: var(--transition-duration);
+          --delayed-transition: calc(var(--transition-duration) * 2) ease-in-out var(--transition-duration);
+          --line-color: hsl(var(--hue), 15%, 95%);
+
+          &::part(letter) {
+            transition:
+              all var(--full-transition),
+              border-bottom-width var(--fast-transition),
+              border-left-width var(--fast-transition),
+              border-right-width var(--fast-transition),
+              border-top-width var(--fast-transition),
+              border-width var(--fast-transition),
+              border-bottom-color var(--fast-transition),
+              border-left-color var(--fast-transition),
+              border-right-color var(--fast-transition),
+              border-top-color var(--fast-transition),
+              border-color var(--fast-transition),
+              width var(--delayed-transition),
+              height var(--delayed-transition),
+              top var(--delayed-transition),
+              left var(--delayed-transition);
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1><css-text class="monospace">CSS-TEXT DEMO</css-text></h1>
+      <textarea id="input"></textarea>
+      <css-text id="preview" class="monospace"></css-text>
+      <footer>
+        <a href="https://github.com/maximeij/css-text" target="_blank">Repository (Github)</a>
+      </footer>
+    </main>
+
+    <script type="module" src="./demo/main.ts" defer></script>
+  </body>
+</html>
