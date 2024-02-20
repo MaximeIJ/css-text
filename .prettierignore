@@ -1,0 +1,21 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# production
+/dist
+/demo-pages
+
+# debug
+npm-debug.log*
+
+# local env files
+.env*.local
+
+# vscode
+.vscode
+
+# typescript
+*.tsbuildinfo
+

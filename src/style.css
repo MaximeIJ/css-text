@@ -1,0 +1,32 @@
+css-text {
+  --transition-duration: 0.25s;
+
+  &::part(letter) {
+    color: transparent;
+    display: inline-block;
+    position: relative;
+    overflow: visible;
+    transition: all 1s ease-in-out;
+  }
+
+  &::part(letter)::selection {
+    background: blue;
+    color: transparent;
+  }
+
+  /* Separate selector because https://css-tricks.com/overriding-the-default-text-selection-color-with-css/ */
+  &::part(letter)::-moz-selection {
+    background: blue;
+    color: transparent;
+  }
+}
+
+css-text::part(letter)::after,
+css-text::part(letter)::before {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  border-color: var(--line-color);
+  border-width: var(--line-width);
+  transition: all 0.5s;
+}
