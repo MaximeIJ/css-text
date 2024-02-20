@@ -1,0 +1,90 @@
+{
+  "name": "@maximeij/css-text",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "",
+  "author": "Maxime IJ",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/MaximeIJ/css-text/issues"
+  },
+  "homepage": "http://MaximeIJ.github.io/css-text",
+  "keywords": [
+    "css",
+    "css-art",
+    "css-text",
+    "animation",
+    "text-animation"
+  ],
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "main": "./dist/css-text.umd.js",
+  "module": "./dist/css-text.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/css-text.js",
+      "require": "./dist/css-text.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.17",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@vitest/ui": "^1.3.0",
+    "auto-changelog": "^2.4.0",
+    "clean-package": "^2.2.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "jsdom": "^24.0.0",
+    "prettier": "^3.2.5",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.3",
+    "vite-plugin-dts": "^3.7.2",
+    "vite-plugin-remove-console": "^2.2.0",
+    "vitest": "^1.3.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "build:demo": "vite build -c vite.config.demo.ts",
+    "custom:publish": "npm publish && npx clean-package restore && git restore . && git push",
+    "dev": "vite -c vite.config.demo.ts",
+    "lint": "eslint . --fix && prettier -w .",
+    "prepublishOnly": "npm run build && npm run test:run && npm run lint && clean-package",
+    "postversion": "auto-changelog -p && git add CHANGELOG.md && git commit --amend --no-edit",
+    "publish:major": "npm version major && npm run custom:publish",
+    "publish:minor": "npm version minor && npm run custom:publish",
+    "publish:patch": "npm version patch && npm run custom:publish",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaximeIJ/css-text.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "clean-package": {
+    "extends": "clean-package/common",
+    "remove": [
+      "clean-package",
+      "dependencies",
+      "devDependencies",
+      "publishConfig",
+      "scripts"
+    ]
+  }
+}
