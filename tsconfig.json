@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "useDefineForClassFields": true,
+    "lib": ["dom", "dom.iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "types": ["vitest/globals"],
+    "paths": {
+      "css-text": ["src/css-text.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "demo/main.ts"],
+  "exclude": ["node_modules", "dist"],
+  "references": [{"path": "./tsconfig.node.json"}]
+}
