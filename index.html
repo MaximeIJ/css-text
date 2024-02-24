@@ -7,7 +7,7 @@
     <style>
       html {
         color-scheme: dark light;
-        font-size: 20px;
+        font-size: 16px;
         --hue: 89deg;
         color: hsl(var(--hue), 15%, 95%);
         background: hsl(var(--hue), 5%, 5%);
@@ -43,11 +43,13 @@
       }
       main {
         height: 100vh;
+        max-width: 90rem;
+        margin: auto;
         padding: 0 1vh;
         display: grid;
         place-content: center;
         gap: 2vh;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(13rem, 25rem) minmax(23rem, 1fr);
         grid-template-rows: auto 0.9fr auto;
 
         @media screen and (max-width: 600px) {
@@ -62,6 +64,7 @@
         }
 
         & > textarea {
+          min-height: 20vh;
           padding: 1rem;
           font-size: 1rem;
           line-height: 200%;

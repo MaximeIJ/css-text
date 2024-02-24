@@ -73,6 +73,9 @@ export function getCharacterProperties(character: string): {display?: string; cl
     case '+':
       className = 'plus';
       break;
+    case '#':
+      className = 'hash';
+      break;
 
     default:
       break;

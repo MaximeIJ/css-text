@@ -11,13 +11,51 @@ css-text.monospace::part(letter)::before {
   left: 9%;
   height: 20%;
   width: 80%;
+  margin-top: 0.1em;
   border-radius: calc(var(--line-width) / 2);
   border-style: solid;
   transform-origin: center center;
 }
 
 /* Alphabet */
-/* todo: A B */
+css-text.monospace::part(A)::after {
+  top: 17%;
+  left: 35%;
+  height: 67%;
+  width: 5%;
+  border-width: 0;
+  border-left-width: calc(1.1 * var(--line-width));
+  border-radius: 0%;
+  transform-origin: top center;
+  transform: skew(-16deg, 0deg);
+}
+css-text.monospace::part(A)::before {
+  top: 17%;
+  left: 39%;
+  height: 67%;
+  width: 5%;
+  border-width: 0;
+  border-left-width: calc(1.1 * var(--line-width));
+  border-radius: 0%;
+  transform-origin: top center;
+  transform: skew(16deg, 0deg);
+}
+css-text.monospace::part(B)::after {
+  top: 47%;
+  left: 11%;
+  height: 38%;
+  width: 83%;
+  border-radius: 0 45% 50% 5%;
+  border-right-width: calc(1.1 * var(--line-width));
+}
+css-text.monospace::part(B)::before {
+  top: 17%;
+  left: 11%;
+  height: 36%;
+  width: 78%;
+  border-radius: 5% 45% 50% 0;
+  border-right-width: calc(1.1 * var(--line-width));
+}
 css-text.monospace::part(C)::after {
   top: 17%;
   height: 36%;
@@ -144,7 +182,7 @@ css-text.monospace::part(I)::before {
 }
 css-text.monospace::part(J)::after {
   top: 65%;
-  left: 7%;
+  left: 5%;
   height: 20%;
   width: 74%;
   border-width: calc(0.8 * var(--line-width));
@@ -155,9 +193,9 @@ css-text.monospace::part(J)::after {
 }
 css-text.monospace::part(J)::before {
   top: 17%;
-  left: 14%;
+  left: 16%;
   height: 50%;
-  width: 67%;
+  width: 63%;
   border-width: calc(0.8 * var(--line-width));
   border-left-width: 0;
   border-bottom-width: 0;
@@ -201,24 +239,25 @@ css-text.monospace::part(L)::before {
   border-radius: 0%;
 }
 css-text.monospace::part(M)::after {
-  top: 11%;
-  left: calc(50% - 0.19em);
-  height: 0.38em;
-  width: 0.38em;
-  border-width: calc(0.8 * var(--line-width));
+  top: 15%;
+  left: calc(50% - 0.16em);
+  height: 0.32em;
+  width: 0.32em;
+  border-width: calc(1.1 * var(--line-width));
   border-top-width: 0;
   border-right-width: 0;
-  transform: rotateZ(-45deg) skew(-25deg, -25deg);
+  transform: rotateZ(-45deg) skew(-17deg, -17deg);
 }
 css-text.monospace::part(M)::before {
-  top: 15%;
+  top: 14%;
   left: 8%;
-  height: 66%;
+  height: 68%;
   width: 84%;
+  border-width: calc(1.1 * var(--line-width));
   border-top-width: 0;
   border-bottom-width: 0;
   border-radius: 0%;
-  transform: perspective(1em) rotateX(20deg);
+  transform: perspective(1em) rotateX(13deg);
 }
 css-text.monospace::part(N)::after {
   top: 17%;
@@ -289,7 +328,7 @@ css-text.monospace::part(Q)::before {
   border-radius: 50% / 40%;
 }
 css-text.monospace::part(R)::after {
-  top: 40%;
+  top: 41%;
   left: 12%;
   height: 39%;
   width: 62%;
@@ -326,16 +365,16 @@ css-text.monospace::part(S)::before {
 }
 css-text.monospace::part(T)::after {
   top: 17%;
-  left: 8%;
+  left: 7%;
   height: 9%;
-  width: 84%;
+  width: 86%;
   border-width: 0;
   border-top-width: calc(0.9 * var(--line-width));
   border-radius: 0%;
 }
 css-text.monospace::part(T)::before {
-  top: 17%;
-  left: calc(50% - var(--line-width) / 2);
+  top: 18%;
+  left: 39%;
   height: 67%;
   width: 9%;
   border-width: 0;
