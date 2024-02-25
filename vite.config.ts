@@ -29,7 +29,6 @@ export default defineConfig({
     }),
     removeConsole({includes: ['log', 'warn', 'error', 'debug']}),
   ],
-  root: resolve(__dirname, 'src'),
   test: {
     environment: 'jsdom',
   },
