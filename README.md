@@ -8,9 +8,10 @@ Web Component to render text using CSS art allowing transitions between letter p
 npm i @maximeij/css-text
 ```
 
-Remember to import the css or implement your own
+Remember to import the css (includes the default monospace font)
 
 ```typescript
+import '@maximeij/css-text';
 import '@maximeij/css-text/css';
 ```
 

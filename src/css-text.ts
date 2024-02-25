@@ -1,6 +1,8 @@
 import {getCharacterProperties} from './util';
+import './style.css';
+import './fonts/monospace.css';
 
-export default class CSSText extends HTMLElement {
+export class CSSText extends HTMLElement {
   private observer: MutationObserver;
 
   constructor() {
@@ -62,3 +64,5 @@ export default class CSSText extends HTMLElement {
 }
 
 customElements.define('css-text', CSSText);
+
+export {version} from '../package.json';
